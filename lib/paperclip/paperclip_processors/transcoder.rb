@@ -91,8 +91,8 @@ module Paperclip
     end
 
     def set_convert_options options
-      return options[:convert_options] if options[:convert_options].present?
-      options[:convert_options] = {output: {}}
+      options[:convert_options] ||= {}
+      options[:convert_options][:output] ||= {}
       return options[:convert_options]
     end
 
